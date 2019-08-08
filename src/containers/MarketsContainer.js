@@ -1,6 +1,9 @@
 import React, { Component } from "react"
+import { connect } from 'react-redux'
 
-export default class MarketsContainer extends Component{
+
+
+class MarketsContainer extends Component{
     state =  {
         markets: []
     }
@@ -8,12 +11,7 @@ export default class MarketsContainer extends Component{
 
 
   componentDidMount() {
-    fetch("http://localhost:3001/api/markets")
-      .then(res => {
-        return res.json()
-      })
-
-      .then(markets => this.setState({ markets }))
+  
   }
 
 
@@ -34,3 +32,12 @@ export default class MarketsContainer extends Component{
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    markets: state.markets
+  }
+}
+
+
+export default connect(mapStateToProps)(MarketsContainer)
