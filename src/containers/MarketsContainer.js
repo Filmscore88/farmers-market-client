@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
+import { fetchMarkets } from "../redux/actions/marketsActions"
 
 
 
@@ -11,20 +12,24 @@ class MarketsContainer extends Component{
 
 
   componentDidMount() {
-  
+    this.props.fetchMarkets()
   }
 
 
   render () {
-    if(this.state.markets.length === 0 ){
+    if(this.props.markets.length === 0 ){
       return <h1>Loading....</h1>
     }
     return(
       <div>
         <ul>
-          {this.state.markets.map(market => (
+          {this.props.markets.map(market => (
             <div>
               <p>Name: {market.name} </p>
+              <p>Address: {market.address} </p>
+              <p>Googlelink: {market.GoogleLink} </p>
+              <p>Products: {market.products} </p>
+              <p>Schedule: {market.schedule} </p>
             </div>
             ))}
         </ul>
@@ -40,4 +45,6 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps)(MarketsContainer)
+export default connect(mapStateToProps,
+  { fetchMarkets }
+)(MarketsContainer)
