@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2- Card styling for cards
+3- What to do when a user clicks on a card (functionality)  Fetch/action/card(show/api)
+4- styling
 
 ## Available Scripts
 
