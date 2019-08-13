@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchMarkets } from "../redux/actions/marketsActions"
 import '../Markets.css'
 import {NavLink} from  'react-router-dom'
-import {BrowserRouter, as Router, Route}
+
 import MarketsList from '../components/MarketsList'
 
 
@@ -14,15 +14,16 @@ class MarketsContainer extends Component {
   }
 
 
-connect to store
-grab attributes form market.id and display in tag
+
   render() {
 
     return(
       <div>
         {this.props.markets.map( market => (
-          <Route path={`/markets/${market.id}`}  >
+          <NavLink to={`/markets/${market.id}`}  >{market.name}</NavLink>
+
         ))}
+
       </div>
     )
   }

@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from "react"
+import { connect } from 'react-redux'
+import MarketsContainer from 'MarketsContainer'
 
 
-const MarketCard = ({market}) => (
+const MarketCard = (props) => {
+
+return (
   <div key= {market.id} className= "MarketCard">
     <h3>{market.name.replace(/\d*/g,'')}</h3>
     <img src= "https://s3-media3.fl.yelpcdn.com/bphoto/PTd0DMmirVaUICMvCObj3w/258s.jpg"/>
@@ -10,20 +14,10 @@ const MarketCard = ({market}) => (
     <p>Schedule: {market.schedule.replace(/\<br\>/g," ")} </p>
     <a href= {`${market.GoogleLink}`}> GoogleMaps </a>
   </div>
-
 )
 
-
-const mapStateToProps = (state) => {
-
-
-    const event = state.events.events.find(event => event.id === id);
-
-    return {
-        event: event
-    }
 }
 
-export default connect(mapStateToProps, {deleteEvent})(EventShow);
 
-export default MarketCard;
+
+export default connect(mapStateToProps, {deleteEvent})(EventShow);
