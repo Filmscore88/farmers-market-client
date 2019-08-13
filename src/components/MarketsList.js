@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
-import { connect } from 'react-redux'
+import React from 'react';
+import MarketsContainer from '../containers/MarketsContainer';
+import {NavLink} from  'react-router-dom';
 
 
-class MarketsList extends Component{
+class MarketsList extends React.Component {
+
+constructor(props){
+  super(props)
+
+}
 
 
   render(){
 
     return(
-      <div className= "MarketsList">
 
-
-      </div>
+    <NavLink to= {`/markets/${this.props.id}`}> {this.props.name} </NavLink>
 
     )
   }
-
 }
 
 
-const mapStateToProps = state =>  {
-  return{
-    markets: state.markets
-  }
-
-}
-
-export default connect (mapStateToProps)(MarketsList);
+export default MarketsList;

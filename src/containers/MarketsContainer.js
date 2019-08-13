@@ -2,9 +2,8 @@ import React, { Component } from "react"
 import { connect } from 'react-redux'
 import { fetchMarkets } from "../redux/actions/marketsActions"
 import '../Markets.css'
-import {NavLink} from  'react-router-dom'
+import MarketsList from '../components/MarketsList';
 
-import MarketsList from '../components/MarketsList'
 
 
 class MarketsContainer extends Component {
@@ -20,8 +19,7 @@ class MarketsContainer extends Component {
     return(
       <div>
         {this.props.markets.map( market => (
-          <NavLink to={`/markets/${market.id}`}  >{market.name}</NavLink>
-
+          <MarketsList key={market.id} id= {market.id} name={market.name} />
         ))}
 
       </div>

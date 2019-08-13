@@ -20,4 +20,4 @@ return (
 
 
 
-export default connect(mapStateToProps, {deleteEvent})(EventShow);
+export default MarketCard;
