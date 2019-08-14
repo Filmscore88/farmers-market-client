@@ -8,12 +8,18 @@ class MarketsListItem extends Component {
 
 
   render() {
-
     return(
-    <p> </p>
+      this.props.market.map( market => (
+
+        <NavLink to= {`/markets/${this.props.id}/edit`}> {this.props.name} </NavLink>
+
+      ))
+
     )
   }
 }
+
+
 
 const mapStateToProps = (state) => {
 

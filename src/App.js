@@ -15,6 +15,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route  exact path="/markets" component={MarketsContainer}/>
           <Route path="/markets/:id" component={MarketsListItem}/>
+          <Route path="/markets/:id/edit" component={EditMarketContainer}/>
+
         </div>
       </Router>
     );
