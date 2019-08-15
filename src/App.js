@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import MarketsContainer from './containers/MarketsContainer';
 import NavBar from "./components/NavBar"
 import MarketsListItem from './components/MarketsListItem'
+import EditMarketContainer from './containers/EditMarketContainer'
 
 class App extends Component {
   render(){
