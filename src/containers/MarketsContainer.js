@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { fetchMarkets } from "../redux/actions/marketsActions"
 import '../Markets.css'
 import MarketsList from '../components/MarketsList';
-
-
+import NewMarket from '../containers/NewMarket'
 
 class MarketsContainer extends Component {
 
@@ -20,8 +19,9 @@ class MarketsContainer extends Component {
       <div>
         {this.props.markets.map( market => (
           <MarketsList key={market.id} id= {market.id} name={market.name} />
-        ))}
 
+        ))}
+        <NewMarket/>
       </div>
     )
   }

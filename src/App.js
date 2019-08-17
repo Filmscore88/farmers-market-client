@@ -5,7 +5,7 @@ import Home from "./components/Home"
 import MarketsContainer from './containers/MarketsContainer';
 import NavBar from "./components/NavBar"
 import MarketsListItem from './components/MarketsListItem'
-import EditMarketContainer from './containers/EditMarketContainer'
+import NewMarket from './containers/NewMarket'
 
 class App extends Component {
   render(){
@@ -16,7 +16,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route  exact path="/markets" component={MarketsContainer}/>
           <Route path="/markets/:id" component={MarketsListItem}/>
-          <Route path="/markets/:id/edit" component={EditMarketContainer}/>
+          <Route path="/markets/new" component={NewMarket}/>
 
         </div>
       </Router>
