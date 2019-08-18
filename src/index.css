@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+  body {
+    width: 100%;
+    padding: 0;
+    border: none;
+    margin: 0;
+
+    background-size: 20em;
+    background-repeat: repeat;
+    background-color: rgb(40, 120, 90);
+
+    font-family: "Fira Sans";
+    color: rgb(40, 20, 166);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
