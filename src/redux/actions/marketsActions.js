@@ -1,3 +1,6 @@
+import { resetMarketForm } from './marketForm'
+
+
 export const fetchMarkets = () => dispatch => {
     return fetch("http://localhost:3001/api/markets")
     .then(res => res.json())
@@ -14,38 +17,27 @@ const addMarket = market => {
   }
 }
 
+
+
+
 export const createMarket = market => {
+
   return dispatch => {
+
     return fetch("http://localhost:3001/api/markets", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-type' : 'appication/json'
+        'Content-type': 'application/json'
       },
-      body: JSON.stringify({market: market})
+      body: JSON.stringify({name: market.name, address: market.address, GoogleLink: market.GoogleLink, products: market.products, schedule: market.schedule}),
     })
       .then(response => response.json())
-      .then(market => dispatch(addMarket(market)))
+
+      .then(market => {
+
+        dispatch(addMarket(market))
+        dispatch(resetMarketForm())
+      })
       .catch(error => console.log(error))
   }
 }
-
-// export const editMarket = (market, routerHistory) => {
-//    return dispatch => {
-//     return fetch(`http://localhost:3001/api/markets/${market.id}`, {
-//       method: "PATCH",
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({market: market})
-//     })
-//     .then(response => response.json())
-//     .then(market => {
-//       dispatch(updateEvent(market))
-//       routerHistory.replace(`/markets/${market.id}`)
-//     })
-//     .catch(error => {
-//       dispatch({type: 'error'})
-//       routerHistory.replace('/markets');
-//      })
-//   }
-// }

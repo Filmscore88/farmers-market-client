@@ -15,7 +15,7 @@ class MarketsListItem extends Component {
           <img src= "https://s3-media3.fl.yelpcdn.com/bphoto/PTd0DMmirVaUICMvCObj3w/258s.jpg"/>
           <p>Address: {market.address} </p>
           <p>Products: {market.products} </p>
-          <p>Schedule: {market.schedule.replace(/\<br\>/g," ")} </p>
+            <p>Schedule: {market.schedule} </p>
           <a href= {`${market.GoogleLink}`}> GoogleMaps </a>
         </div>
       ))
@@ -43,3 +43,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, null)(MarketsListItem);
 
 //   <NavLink to= {`/markets/${this.props.id}/edit`}> {this.props.name} </NavLink>
+// <p>Schedule: {market.schedule.replace(/\<br\>/g," ")} </p>

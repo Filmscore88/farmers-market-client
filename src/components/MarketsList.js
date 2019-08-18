@@ -14,7 +14,7 @@ constructor(props){
   render(){
 
     return(
-    <div>
+    <div >
     <NavLink to= {`/markets/${this.props.id}`}> {this.props.name} </NavLink>
     </div>
 
