@@ -16,9 +16,12 @@ import { NavLink } from 'react-router-dom'
         Markets
         <span className="glyphicon glyphicon glyphicon-sunglasses"></span>
      </NavLink>
+     <NavLink style={{marginRight : '40px'}} to='/markets/new'>
+       New Market
+        <span className="glyphicon glyphicon glyphicon-sunglasses"></span>
+     </NavLink>
      </div>
    )
 
  }
-
  export default NavBar;

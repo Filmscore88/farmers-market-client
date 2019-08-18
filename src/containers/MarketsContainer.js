@@ -21,7 +21,6 @@ class MarketsContainer extends Component {
           <MarketsList key={market.id} id= {market.id} name={market.name} />
 
         ))}
-        <NewMarket/>
       </div>
     )
   }

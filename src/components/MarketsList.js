@@ -14,8 +14,9 @@ constructor(props){
   render(){
 
     return(
-    <div >
-    <NavLink to= {`/markets/${this.props.id}`}> {this.props.name} </NavLink>
+    <div className="container-fluid text-center">
+
+    <NavLink style={{marginTop: '30px'}} to= {`/markets/${this.props.id}`}> {this.props.name} </NavLink>
     </div>
 
     )

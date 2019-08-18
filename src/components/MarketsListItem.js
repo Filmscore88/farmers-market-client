@@ -15,7 +15,7 @@ class MarketsListItem extends Component {
           <img src= "https://s3-media3.fl.yelpcdn.com/bphoto/PTd0DMmirVaUICMvCObj3w/258s.jpg"/>
           <p>Address: {market.address} </p>
           <p>Products: {market.products} </p>
-            <p>Schedule: {market.schedule} </p>
+          <p>Schedule: {market.schedule.replace(/\<br\>/g," ")} </p>
           <a href= {`${market.GoogleLink}`}> GoogleMaps </a>
         </div>
       ))
