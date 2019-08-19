@@ -7,11 +7,14 @@ class NewMarket extends Component {
 
   handleOnChange = event => {
     const { name, value} = event.target;
+
     const currentMarketFormData = Object.assign({}, this.props.marketsFormData, {
       [name]: value
     })
+
     this.props.updateMarketFormData(currentMarketFormData)
   }
+
 
   handleOnSubmit = event => {
     event.preventDefault()
@@ -24,6 +27,7 @@ class NewMarket extends Component {
     const { name, address, GoogleLink, products, schedule } = this.props.marketsFormData;
 
     return(
+
       <div>
         Add a Market To Markets
         <form onSubmit= {this.handleOnSubmit}>
@@ -80,6 +84,7 @@ class NewMarket extends Component {
 }
 
 const mapStateToProps = state => {
+
   return {
     marketsFormData: state.marketsFormData
   }

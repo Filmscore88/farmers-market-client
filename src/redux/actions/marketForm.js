@@ -9,6 +9,5 @@ export const updateMarketFormData = marketsFormData => {
 export const resetMarketForm = () => {
   return {
     type: "RESET_MARKET_FORM"
-
   }
 }

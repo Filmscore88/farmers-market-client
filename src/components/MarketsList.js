@@ -14,11 +14,10 @@ constructor(props){
   render(){
 
     return(
-    <div className="container-fluid text-center">
+      <div className="container-fluid text-center">
 
-    <NavLink style={{marginTop: '30px'}} to= {`/markets/${this.props.id}`}> {this.props.name} </NavLink>
-    </div>
-
+      <NavLink style={{marginTop: '30px'}} to= {`/markets/${this.props.id}`}> {this.props.name} </NavLink>
+      </div>
     )
   }
 }

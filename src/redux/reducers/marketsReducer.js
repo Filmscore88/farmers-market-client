@@ -7,7 +7,7 @@ export default(state = initialState, action) => {
 
     case 'CREATE_MARKET_SUCCESS':
       return state.concat(action.market);
-      
+
     default:
       return state
   }

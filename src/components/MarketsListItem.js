@@ -8,6 +8,7 @@ class MarketsListItem extends Component {
 
 
   render() {
+
     return(
       this.props.market.map( market => (
         <div key= {market.id} className= "MarketCard">
@@ -19,7 +20,6 @@ class MarketsListItem extends Component {
           <h3><a href= {`${market.GoogleLink}`}> GoogleMaps </a> </h3>
         </div>
       ))
-
     )
   }
 }
@@ -30,17 +30,11 @@ const mapStateToProps = (state) => {
 
   const marketId = document.location.href.match(/\d+/g)[1];
 
-
   const market = state.markets.filter(market => market.id == marketId);
 
-
-
-  return {
-    market: market
-  }
+    return {
+      market: market
+    }
  }
 
 export default connect(mapStateToProps, null)(MarketsListItem);
-
-//   <NavLink to= {`/markets/${this.props.id}/edit`}> {this.props.name} </NavLink>
-// <p>Schedule: {market.schedule.replace(/\<br\>/g," ")} </p>
