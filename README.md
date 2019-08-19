@@ -1,19 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-2- Card styling for cards
-3- What to do when a user clicks on a card (functionality)  Fetch/action/card(show/api)
-4- styling
 
 
  ###                     `Getting Started`
  ## 1-Fork and Clone the farmers-market-api repo 
  ## 2-Follow ReadMe instructions for the farmers-market-api repo. 
  ## 3-Fork and Clone this repo, cd into this project in your terminal and then run "npm start" .
- 
-
-## Opens [http://localhost:3001](http://localhost:3001) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+ ## 4-Scroll through the list of farmers markets or click on New Market to create a new one. 
 
 
 
