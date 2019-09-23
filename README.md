@@ -1,8 +1,8 @@
-### farmers-market-client
+### `farmers-market-client`
 
 farmers-market-api along with farmers-market-client is a web application used to find farmers markets in the ChicagoLand area, as well as create your own market.
 
-### Usage
+### `Usage`
 
 Browse a list of farmers markes , and select one that interests you to view more information or create a new farmers market by clicking the New Market on the navigation bar. 
 
@@ -11,7 +11,7 @@ Browse a list of farmers markes , and select one that interests you to view more
   
   2-Follow ReadMe instructions for the farmers-market-api repo and start up the server. 
    
-  3-Fork and Clone this project repo and then cd into the project file. After steps 1-3 are complete, run ##npm ##start in         your terminal.
+  3-Fork and Clone this project repo and then cd into the project file. After steps 1-3 are complete, run `npm start` in         your terminal.
 
 
 
