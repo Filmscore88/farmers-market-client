@@ -11,6 +11,24 @@ constructor(props){
 }
 
 
+
+  // fetch("http://localhost:3001/api/markets")
+  // .then(res => {
+  //   if(res.status != 200) {
+  //     throw new Error(res.statusText)
+  //   } else {
+  //     return res.json()
+  //   }
+  // })
+  // .then(markets =>
+  //   console.log('c', markets)
+  // )
+  // .catch(err => console.log(''))
+  //
+
+
+
+// }
   render(){
 
     return(
