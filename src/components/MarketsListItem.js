@@ -12,7 +12,7 @@ class MarketsListItem extends Component {
     return(
       this.props.market.map( market => (
         <div key= {market.id} className= "MarketCard">
-          // <img src= "https://cdn.clipart.email/2e03433c29d2fe71d995c36c315481dd_10956-farmers-market-stock-vector-illustration-and-royalty-free-_450-450.jpeg"/>
+          <img src= "https://cdn.clipart.email/2e03433c29d2fe71d995c36c315481dd_10956-farmers-market-stock-vector-illustration-and-royalty-free-_450-450.jpeg"/>
           <h1>{market.name.replace(/\d*/g,'')}</h1>
           <h2>Address: {market.address}</h2>
           <h2>Products: {market.products} </h2>
