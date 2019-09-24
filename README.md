@@ -11,8 +11,12 @@ Browse a list of farmers markes , and select one that interests you to view more
   
   2-Follow ReadMe instructions for the `farmers-market-api` repo and start up the server. 
    
-  3-Fork and Clone this project repo and then cd into the project file. After steps 1-3 are complete, run `npm start` in         your terminal.
-
+  3-Fork and Clone this project repo and then cd into the project file. 
+  
+  4-run `bundle install` on your terminal.
+  
+  5-After steps 1-4 are complete, run `npm start` in         your terminal.
+  
 
 
 ###                       `Closing down the app`
