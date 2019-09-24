@@ -1,6 +1,8 @@
 ### `farmers-market-client`
 
-farmers-market-api along with farmers-market-client is a web application used to find farmers markets in the ChicagoLand area, as well as create your own market.
+Farmers Market is a web application used to find farmers markets in the ChicagoLand area, as well as create your own market.
+
+![Image description](https://user-images.githubusercontent.com/47762691/65477598-64b56100-de4c-11e9-8526-889360859420.png)
 
 ### `Usage`
 
