@@ -5,35 +5,42 @@ export default class Home extends Component {
     super(props);
     this.state = {
       items: [],
-      inputSubmited: false,
+      inputSubmitted: false,
       areaCode: 0
     };
   }
 
-  userSubmition = e => {
-    e.preventDefault();
+  handleChange(event) {
+    this.setState({ areaCode: event.target.value });
+  }
+
+  handleOnSubmit = event => {
+    event.preventDefault();
 
     fetch(
-      "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60133"
+      "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
+        `"${areaCode}"`
     )
       .then(res => res.json())
       .then(json => {
         this.setState({
-          isLoaded: true,
+          isSubmitted: true,
           items: json["results"]
         });
       });
   };
 
   render() {
-    const { inputSubmited, items } = this.state;
-    if (!inputSubmited) {
+    const { inputSubmitted, items, areaCode } = this.state;
+    if (!inputSubmitted) {
       return (
-        <div>
-          Search Markets
-          <label areaCode="Zipcode"> AreaCode: </label>
-          <input type="number" value={areaCode} />
-        </div>
+        <form onSubmit ={this.handleOnSubmit}/>
+          <label>
+            Area Code:
+          <input type="number" value={this.state.areaCode} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit"/>
+          </form>
       );
     } else {
       return (
