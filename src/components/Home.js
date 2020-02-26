@@ -17,20 +17,24 @@ export default class Home extends Component {
       .then(json => {
         this.setState({
           isLoaded: true,
-          items: json
+          items: json["results"]
         });
       });
   }
 
   render() {
     const { isLoaded, items } = this.state;
+    console.log(items);
     if (!isLoaded) {
-      return;
-      <div>Loading...</div>;
+      return <div>Loading...</div>;
     } else {
       return (
         <div className="Homepage">
-          <h1>Welcome</h1>
+          <ul>
+            {items.map(item => (
+              <li key={item.id}>{item.marketname}</li>
+            ))}
+          </ul>
           <img src="https://www.shelmerdine.com/wp-content/uploads/2018/05/Farmers-Market.jpg" />
         </div>
       );
