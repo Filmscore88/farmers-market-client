@@ -5,11 +5,14 @@ export default class Home extends Component {
     super(props);
     this.state = {
       items: [],
-      isLoaded: false
+      inputSubmited: false,
+      areaCode: 0
     };
   }
 
-  componentDidMount() {
+  userSubmition = e => {
+    e.preventDefault();
+
     fetch(
       "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60133"
     )
@@ -20,13 +23,18 @@ export default class Home extends Component {
           items: json["results"]
         });
       });
-  }
+  };
 
   render() {
-    const { isLoaded, items } = this.state;
-    console.log(items);
-    if (!isLoaded) {
-      return <div>Loading...</div>;
+    const { inputSubmited, items } = this.state;
+    if (!inputSubmited) {
+      return (
+        <div>
+          Search Markets
+          <label areaCode="Zipcode"> AreaCode: </label>
+          <input type="number" value={areaCode} />
+        </div>
+      );
     } else {
       return (
         <div className="Homepage">
