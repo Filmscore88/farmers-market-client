@@ -20,7 +20,7 @@ export default class Home extends Component {
     event.preventDefault();
     fetch(
       "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-        `"${this.state.areaCode}"`
+        `${this.state.areaCode}`
     )
       .then(res => res.json())
       .then(json => {
