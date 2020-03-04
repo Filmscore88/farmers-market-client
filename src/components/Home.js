@@ -6,10 +6,12 @@ export default class Home extends Component {
     this.state = {
       items: [],
       inputSubmitted: false,
-      zipSearch: ""
+      zipSearch: "",
+      market: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange = event => {
