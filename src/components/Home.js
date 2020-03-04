@@ -6,21 +6,32 @@ export default class Home extends Component {
     this.state = {
       items: [],
       inputSubmitted: false,
-      areaCode: 0
+      zipSearch: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ areaCode: event.target.value });
-  }
+  handleChange = event => {
+    this.setState({ zipSearch: event.target.value });
+  };
 
+  handleClick = event => {
+    event.preventDefault();
+    fetch(
+      "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
+        `${event.target.id}`
+    )
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+      });
+  };
   handleOnSubmit = event => {
     event.preventDefault();
     fetch(
       "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-        `${this.state.areaCode}`
+        `${this.state.zipSearch}`
     )
       .then(res => res.json())
       .then(json => {
@@ -32,17 +43,16 @@ export default class Home extends Component {
   };
 
   render() {
-    const { inputSubmitted, items, areaCode } = this.state;
+    const { inputSubmitted, items, zipSearch } = this.state;
     console.log({ inputSubmitted });
     if (!inputSubmitted) {
       return (
         <form onSubmit={this.handleOnSubmit}>
           <label>
-            Area Code:
-            <input type="number" onChange={this.handleChange} />
+            Farmers Markets Near:
+            <input type="text" onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
-          <img src="https://www.shelmerdine.com/wp-content/uploads/2018/05/Farmers-Market.jpg" />
         </form>
       );
     } else {
@@ -50,7 +60,13 @@ export default class Home extends Component {
         <div className="Homepage">
           <ul>
             {items.map(item => (
-              <li key={item.id}>{item.marketname}</li>
+              <li
+                onClick={this.handleClick.bind(this)}
+                id={item.id}
+                key={item.id}
+              >
+                {item.marketname}
+              </li>
             ))}
           </ul>
         </div>
